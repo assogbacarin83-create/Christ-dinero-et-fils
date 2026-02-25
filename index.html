@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHRIST DINERO ET FILS</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+    <img src="image/logo.png.png" alt="Logo CHRIST DINERO ET FILS">
+    <span>CHRIST DINERO ET FILS</span>
+</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <nav id="nav">
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#stats">Performances</a>
+        <a href="#testimonials">Témoignages</a>
+        <a href="#partners">Partenaires</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="accueil">
+    <h1>Excellence • Fiabilité • Performance</h1>
+    <p>Import | Transport | BTP | Commerce Général</p>
+    <a href="https://wa.me/22967718686" class="btn">Contact WhatsApp</a>
+</section>
+
+<section class="section reveal" id="apropos">
+    <h2>À propos</h2>
+    <p>
+        CHRIST DINERO ET FILS est une entreprise moderne opérant au
+        Bénin, Togo et Côte d’Ivoire. Nous offrons des services
+        professionnels en Import, Transport, BTP et Commerce Général
+        avec un haut niveau d’excellence.
+    </p>
+</section>
+
+<section class="section services reveal" id="services">
+    <h2>Nos Services</h2>
+    <div class="services-container">
+
+        <div class="service-card">
+            <img src="image/service1.jpg.jpg" alt="Import Transport">
+            <h3>Import / Transport</h3>
+            <p>Gestion logistique et transport sécurisé de marchandises.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="image/service2.jpg.jpg" alt="BTP">
+            <h3>BTP</h3>
+            <p>Travaux publics, construction et infrastructures modernes.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="image/service3.jpg.jpg" alt="Commerce Général">
+            <h3>Commerce Général</h3>
+            <p>Vente de produits de quincaillerie et fournitures diverses.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section galerie reveal" id="galerie">
+    <h2>Galerie</h2>
+    <div class="gallery-grid">
+        <img src="image/gallerie1.jpg.jpg" alt="Galerie 1">
+        <img src="image/gallerie2.jpg.jpg" alt="Galerie 2">
+        <img src="image/gallerie3.jpg.jpg" alt="Galerie 3">
+    </div>
+</section>
+
+<section class="section stats reveal" id="stats">
+    <h2>Nos Performances</h2>
+    <div class="stats-container">
+        <div class="stat-box">
+            <h3 class="counter" data-target="150">0</h3>
+            <p>Clients satisfaits</p>
+        </div>
+        <div class="stat-box">
+            <h3 class="counter" data-target="80">0</h3>
+            <p>Projets réalisés</p>
+        </div>
+        <div class="stat-box">
+            <h3 class="counter" data-target="10">0</h3>
+            <p>Années d'expérience</p>
+        </div>
+    </div>
+</section>
+
+<section class="section testimonials reveal" id="testimonials">
+    <h2>Témoignages</h2>
+    <div class="testimonial-slider">
+        <div class="testimonial active">
+            <p>"Service rapide et très professionnel."</p>
+            <h4>— Client BTP</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Entreprise fiable pour l'importation."</p>
+            <h4>— Partenaire Commercial</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Produits de qualité et excellent service."</p>
+            <h4>— Client Quincaillerie</h4>
+        </div>
+    </div>
+</section>
+
+<section class="section partners reveal" id="partners">
+    <h2>Nos Partenaires</h2>
+    <div class="partners-container">
+        <div class="partner">LOGO 1</div>
+        <div class="partner">LOGO 2</div>
+        <div class="partner">LOGO 3</div>
+        <div class="partner">LOGO 4</div>
+    </div>
+</section>
+
+<section class="section contact reveal" id="contact">
+    <h2>Contact</h2>
+    <form action="mailto:clementassogba1992@gmail.com" method="post" enctype="text/plain">
+        <input type="text" placeholder="Nom" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+
+<a href="https://wa.me/22967718686" class="whatsapp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+    © 2026 CHRIST DINERO ET FILS | Bénin • Togo • Côte d’Ivoire
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("nav").classList.toggle("active");
+}
+
+/* COUNTER ANIMÉ */
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+    counter.innerText = '0';
+    const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const c = +counter.innerText;
+        const increment = target / 200;
+        if(c < target){
+            counter.innerText = `${Math.ceil(c + increment)}`;
+            setTimeout(updateCounter, 10);
+        } else {
+            counter.innerText = target;
+        }
+    };
+    updateCounter();
+});
+
+/* TESTIMONIAL SLIDER */
+let index = 0;
+const testimonials = document.querySelectorAll(".testimonial");
+function showTestimonial(){
+    testimonials.forEach(t => t.classList.remove("active"));
+    index++;
+    if(index >= testimonials.length) index = 0;
+    testimonials[index].classList.add("active");
+}
+setInterval(showTestimonial, 4000);
+
+/* Scroll Reveal */
+ScrollReveal().reveal('.reveal', {
+    distance: '60px',
+    duration: 1200,
+    easing: 'ease-out',
+    origin: 'bottom',
+    interval: 200
+});
+</script>
+
+</body>
+</html>
